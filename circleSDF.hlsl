@@ -1,9 +1,6 @@
-float circleSDF(vec2 position, float radius) {
+float circleSDF(vec2 UV) {
 
-	vec2 UV = (gl_FragCoord.xy - (position * u_resolution)) / vec2(radius);
-
-	float circ = dot(UV, UV) * 2.0;
-
-    return circ;
+    // Dot product of itself is just magnitude
+	return 2. * dot(UV, UV);
 
 }
